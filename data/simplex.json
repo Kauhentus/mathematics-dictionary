@@ -1,0 +1,11 @@
+{
+    "name": "Simplex",
+    "uniqueID": "simplex",
+    "description": "The \\(d\\)-simplex is defined as the following subset of \\(\\mathbb{R}^d\\): \\(\\{x\\in\\mathbb{R}^d:\\sum_{i=0}^d x_i = 1, x_i \\geq 0\\:\\: \\forall i\\in [d]\\}\\). ",
+
+    "creationDate": "2023-11-19T14:03:49.951Z",
+    "editDate": "2023-11-19T14:03:49.951Z",
+
+    "categories": ["probability theory"],
+    "subCards": []
+}

@@ -1,0 +1,11 @@
+{
+    "name": "Probability Density Function (PDF)",
+    "uniqueID": "probability-density-function-(pdf)",
+    "description": "Given a probability space \\((\\Omega, \\mathbb{P})\\), the PDF of a random variable \\(X\\) is the function whose value describes the probability of the random variable being each \\(\\omega\\in\\Omega\\) with \\(f(\\omega)=\\mathbb{P}(X=\\omega)\\). The following must hold for any PDF:\n\n$$\\int_{\\infty}^\\infty p(x)dx = 1$$\n\nNote that the PDF is describing how our random variable \\(X\\) is distributed over \\(\\Omega\\). In other words, PDFs describe probability distributions.",
+
+    "creationDate": "2023-11-19T14:12:47.207Z",
+    "editDate": "2023-11-19T15:33:12.582Z",
+
+    "categories": ["probability theory"],
+    "subcards": ["marginal-pdf","cumulative-density-function-(cdf)","joint-probability-distribution(jpd)","conditional-probability"]
+}

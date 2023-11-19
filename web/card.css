@@ -1,0 +1,42 @@
+
+.card {
+    border: 1px solid black;
+    border-radius: 2px;
+    padding: 8px;
+
+    max-width: 100%;
+    max-height: 256px;
+    overflow-y: scroll;
+}
+
+.card-button-row button {
+    margin-right: 8px;
+}
+
+.card-subcard-header {
+    margin-bottom: 2px;
+}
+
+.card-subcard-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1.33em;
+}
+
+.card-subcard-leftlist {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-subcard-rightlist {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-subcard-item {
+
+}
+
+.card-meta-row {
+    margin-top: 8px;
+}

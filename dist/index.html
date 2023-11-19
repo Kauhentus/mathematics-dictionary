@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <link href="/web/style.css" rel="stylesheet">
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+
+    <body>
+        <!-- <h1>Math Database</h1> -->
+        <div id="container">
+            <div id="left-pane-scroll-container">
+                <div id="left-pane"></div>
+            </div>
+            <div id="right-pane-scroll-container">
+                <div id="right-pane">
+                    <label>Card Name</label>
+                    <input id="card-name-input" type="text">
+                    <label>Card Description</label>
+                    <textarea id="card-description-input" rows="8"></textarea>
+    
+                    <label>Card Preview</label>
+                    <div id="card-preview-container"></div>
+                    
+                    <label>Card JSON</label>
+                    <textarea id="card-description-output" rows="4"></textarea>
+                    <div class="button-row" style="margin-top: 4px;">
+                        <button id="card-authoring-copy-button">Copy JSON</button>
+                        <button id="card-authoring-paste-button">Paste JSON</button>
+                        <button id="card-authoring-clear-button">Clear</button>
+                    </div>
+    
+                    <label>Categories</label>
+                    <input id="card-category-input" type="text"></textarea>
+    
+                    <label>Subcards</label>
+                    <textarea id="card-subcard-input" rows="8"></textarea>
+                </div>
+            </div>
+            
+        </div>
+        <script src="bundle.js"></script>
+    </body>
+</html>

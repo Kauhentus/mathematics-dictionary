@@ -1,0 +1,11 @@
+{
+    "name": "Conditional Probability",
+    "uniqueID": "conditional-probability",
+    "description": "Given a probability space \\((\\Omega,\\mathbb{P})\\), conditional probability is defined as the probability an event \\(B\\) occurs given an event \\(A\\) occurs. The formula for conditional probability:\n\n$$\\mathbb{P}(B|A)=\\frac{\\mathbb{P}(A, B)}{\\mathbb{P}(A)}$$",
+
+    "creationDate": "2023-11-19T15:42:29.603Z",
+    "editDate": "2023-11-19T15:45:15.740Z",
+
+    "categories": ["probability-theory"],
+    "subcards": []
+}

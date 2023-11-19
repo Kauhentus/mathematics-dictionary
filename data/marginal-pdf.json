@@ -1,0 +1,11 @@
+{
+    "name": "Marginal PDF",
+    "uniqueID": "marginal-pdf",
+    "description": "Given a multivariable PDF \\(f(x_1, x_2, ..., x_n)\\) of a random vector \\(X=(x^{(1)}=x_1, \\:\\:\\ldots, x^{(d)}=x_n)\\), we can find the marginal probability of a subset of random vectors in the event space \\(\\Omega\\). That is to say, we can find \\(\\mathbb{P}(X=(\\:\\:\\ldots, x^{(i-1)}=x_{i-1}, x^{(i+1)}=x_{i+1}, \\:\\:\\ldots)) \\:\\:\\forall i\\in[d]\\) through:\\n\\n$$f_{-i}(\\:\\:\\ldots, x_{i-1}, x_{i+1}, \\:\\:\\ldots)=\\int_{-\\infty}^\\infty f(x_1, \\:\\:\\ldots, x_d)dx_i$$\\n\\nThis action is \"marginalizing\" our PDF \\(f\\) such that it no longer depends on a certain \\(x_i\\); that is, any \\(x_i\\) is valid for our PDF and so \\(f\\) refers to the probability of a subset of events instead of a single event in \\(\\Omega\\). We also note that:\\n\\n$$p_X(x)=\\int_y p_{X|Y}(x|y)p_Y(y)dy = \\mathbb{E}[p_{X|Y}(X|Y)]$$\\n",
+
+    "creationDate": "2023-11-19T14:58:50.438Z",
+    "editDate": "2023-11-19T15:15:25.380Z",
+
+    "categories": ["probability-theory"],
+    "subcards": []
+}
