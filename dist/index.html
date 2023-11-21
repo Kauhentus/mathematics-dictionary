@@ -1,6 +1,8 @@
+<!DOCTYPE html>
 <html>
     <head>
         <link href="/web/style.css" rel="stylesheet">
+        <link href="/web/card.css" rel="stylesheet">
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
         <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </head>
@@ -8,35 +10,73 @@
     <body>
         <!-- <h1>Math Database</h1> -->
         <div id="container">
-            <div id="left-pane-scroll-container">
-                <div id="left-pane"></div>
-            </div>
-            <div id="right-pane-scroll-container">
-                <div id="right-pane">
-                    <label>Card Name</label>
-                    <input id="card-name-input" type="text">
-                    <label>Card Description</label>
-                    <textarea id="card-description-input" rows="8"></textarea>
-    
-                    <label>Card Preview</label>
-                    <div id="card-preview-container"></div>
-                    
-                    <label>Card JSON</label>
-                    <textarea id="card-description-output" rows="4"></textarea>
-                    <div class="button-row" style="margin-top: 4px;">
-                        <button id="card-authoring-copy-button">Copy JSON</button>
-                        <button id="card-authoring-paste-button">Paste JSON</button>
-                        <button id="card-authoring-clear-button">Clear</button>
+            <div id="left-pane-outer-container">
+                <div id="left-pane-scroll-container">
+                    <div id="left-pane-desktop" class="left-pane" style="display: none;">
+                        <label>Desktop</label>
                     </div>
-    
-                    <label>Categories</label>
-                    <input id="card-category-input" type="text"></textarea>
-    
-                    <label>Subcards</label>
-                    <textarea id="card-subcard-input" rows="8"></textarea>
+
+                    <div id="left-pane-search-stack" class="left-pane">
+
+                    </div>
+                </div>
+                <div id="left-pane-tabs">
+                    <button id="left-pane-button-desktop" class="pane-tab">Desktop</button>
+                    <button id="left-pane-button-search-stack" class="pane-tab">Search Stack</button>
                 </div>
             </div>
-            
+            <div id="right-pane-outer-container">
+                <div id="right-pane-scroll-container">
+                    <div id="right-pane-create-card" class="right-pane">
+                        <label>Card Name</label>
+                        <input id="card-name-input" type="text">
+                        <label>Card Description</label>
+                        <textarea id="card-description-input" rows="8"></textarea>
+        
+                        <label>Card Preview</label>
+                        <div id="card-preview-container"></div>
+                        
+                        <label>Card JSON</label>
+                        <textarea id="card-description-output" rows="4"></textarea>
+                        <div class="button-row" style="margin-top: 4px;">
+                            <button id="card-authoring-copy-button">Copy JSON</button>
+                            <button id="card-authoring-paste-button">Paste JSON</button>
+                            <button id="card-authoring-clear-button">Clear</button>
+                        </div>
+        
+                        <label>Categories</label>
+                        <input id="card-category-input" type="text"></textarea>
+        
+                        <label>Subcards</label>
+                        <textarea id="card-subcard-input" rows="8"></textarea>
+                    </div>
+
+                    <div id="right-pane-create-card-group" class="right-pane" style="display: none;">
+                        <label>Card Group Name</label>
+                        <input id="card-group-name-input" type="text">
+                    </div>
+
+                    <div id="right-pane-search" class="right-pane" style="display: none;">
+                        <label>Search query</label>
+                        <input id="search-query-input" type="text">
+                    </div>
+
+                    <div id="right-pane-metadata" class="right-pane" style="display: none;">
+                        <label>Metadata</label>
+                    </div>
+
+                    <div id="right-pane-hierarchy" class="right-pane" style="display: none;">
+                        <label>Hierarchy</label>
+                    </div>
+                </div>
+                <div id="right-pane-tabs">
+                    <button id="right-pane-button-search" class="pane-tab">Search</button>
+                    <button id="right-pane-button-hierarchy" class="pane-tab">Hierarchy</button>
+                    <button id="right-pane-button-create-card" class="pane-tab">Create Card</button>
+                    <button id="right-pane-button-create-card-group" class="pane-tab">Create Card Group</button>
+                    <button id="right-pane-button-metadata" class="pane-tab">Metadata</button>
+                </div>
+            </div>
         </div>
         <script src="bundle.js"></script>
     </body>

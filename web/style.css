@@ -20,19 +20,40 @@ label {
     height: 90%;
 }
 
+#left-pane-outer-container {
+    display: flex;
+    flex-direction: row;
+    margin-right: 8px;
+    height: 90vh;
+}
+
+#left-pane-tabs {
+    display: flex;
+    flex-direction: column;
+}
+
 #left-pane-scroll-container {
     border: 1px solid black;
     border-radius: 2px;
     overflow-y: scroll;
     
-    margin-right: 8px;
     padding: 8px;
     height: 100%;
 }
 
-#left-pane {
-    width: 45vw;
+.left-pane {
+    width: 40vw;
 
+    display: flex;
+    flex-direction: column;
+}
+
+#right-pane-outer-container {
+    display: flex;
+    flex-direction: row;
+}
+
+#right-pane-tabs {
     display: flex;
     flex-direction: column;
 }
@@ -46,11 +67,15 @@ label {
     height: 100%;
 }
 
-#right-pane {
-    width: 45vw;
+.right-pane {
+    width: 40vw;
     height: fit-content;
     margin-left: 8px;
 
     display: flex;
     flex-direction: column;
+}
+
+.pane-tab {
+    writing-mode: vertical-lr;
 }

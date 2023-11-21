@@ -1,23 +1,15 @@
-import { copyFromClipboard, copyToClipboard } from "./util/clipboard";
 import { Card, CardJSON } from "./card";
 import { loadData } from "./util/loader";
 import { initCardAuthoring } from "./features/card-authoring";
 import { createVSpacer } from "./util/spacers";
+import { initPaneManagement } from "./features/pane-management";
 
-console.log("hello world");
-
-const cardPaths = [
-    'simplex',
-    'probability-density-function'
-];
-
-const leftPaneNode = document.getElementById('left-pane') as HTMLDivElement;
-const rightPaneNode = document.getElementById('right-pane') as HTMLDivElement;
+const leftPaneNode = document.getElementById('left-pane-search-stack') as HTMLDivElement;
 
 const loadCards = async () => {
     const cardMap = await loadData('../card-map.json');
     const paths: string[] = cardMap.files;
-    const cardsJSON = await Promise.all(paths.map(path => loadData(`../data/${path}.json`)));
+    const cardsJSON = await Promise.all(paths.map(path => loadData(`../data-cards/${path}.json`)));
 
     return cardsJSON;
 }
@@ -49,3 +41,4 @@ const init = async () => {
 
 init();
 initCardAuthoring();
+initPaneManagement();

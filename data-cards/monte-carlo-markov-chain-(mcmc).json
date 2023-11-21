@@ -1,0 +1,11 @@
+{
+    "name": "Monte Carlo Markov Chain (MCMC)",
+    "uniqueID": "monte-carlo-markov-chain-(mcmc)",
+    "description": "Let \\(\\{X_n\\}_{n=0}^\\infty\\) be a homogeneous Markov chain.",
+
+    "creationDate": "2023-11-21T02:46:41.986Z",
+    "editDate": "2023-11-21T04:13:48.930Z",
+
+    "categories": ["probability-theory"],
+    "subcards": ["ergodic-theorem","markov-chain","monte-carlo"]
+}
