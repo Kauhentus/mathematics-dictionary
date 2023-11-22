@@ -11,7 +11,7 @@ export const initCardAuthoring = async () => {
     const cardSubcardInput = document.getElementById('card-subcard-input') as HTMLTextAreaElement;
 
     // meta variables whose state is not carried in innerHTML
-    let creationDate= new Date();
+    let creationDate = new Date();
 
     const descriptionInputUpdate = () => {
         const name = cardNameInput.value;
@@ -20,6 +20,7 @@ export const initCardAuthoring = async () => {
         previewCard.setDates(creationDate, new Date());
         previewCard.setCategories(cardCategoryInput.value.split(',').map(name => name.trim()).filter(name => name.length > 0));
         previewCard.setSubcards(cardSubcardInput.value.split('\n').map(name => name.trim()).filter(name => name.length > 0));
+        previewCard.disableNameAdding();
         cardDescriptionOutput.value = previewCard.toJSON();
 
         const previewCardNode = previewCard.getNode();

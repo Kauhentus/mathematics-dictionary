@@ -1,0 +1,28 @@
+.hierarchy-item-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0px;
+}
+
+.hierarchy-item {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1px;
+}
+
+.hierarchy-label {
+    cursor: pointer;
+}
+
+.hierarchy-toggle-button {
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-right: 4px;
+}
+
+.hierarchy-non-toggle-spacer {
+    /* same as toggle button margin-right except on the left */
+    margin-left: 4px; 
+}

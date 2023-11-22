@@ -1,0 +1,6 @@
+{
+    "name": "Probability theory",
+    "uniqueID": "[G]probability-theory",
+    "description": "",
+    "childrenIDs": ["conditional-probability","marginal-pdf","[G]monte-carlo-methods","monte-carlo-markov-chain-(mcmc)","probability-density-function-(pdf)"]
+}

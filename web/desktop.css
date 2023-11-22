@@ -1,0 +1,31 @@
+#desktop-label {
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+#desktop-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.desktop-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.desktop-margin-left {
+    margin-left: 8px;
+}
+
+.desktop-slot {
+    border: 1px lightgray dashed;
+    width: 100%;
+    min-height: 64px;
+    margin-bottom: 8px;
+
+    cursor: pointer;
+}
+
+#desktop-top-bar {
+    margin-bottom: 8px;
+}

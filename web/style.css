@@ -10,6 +10,10 @@ button {
     font-family:'Courier New', Courier, monospace;
 }
 
+input {
+    font-family:'Courier New', Courier, monospace;
+}
+
 label {
     margin-top: 8px;
 }
@@ -51,6 +55,7 @@ label {
 #right-pane-outer-container {
     display: flex;
     flex-direction: row;
+    height: 90vh;
 }
 
 #right-pane-tabs {

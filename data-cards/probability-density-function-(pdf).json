@@ -4,8 +4,8 @@
     "description": "Given a probability space \\((\\Omega, \\mathbb{P})\\), the PDF of a random variable \\(X\\) is the function \\(f:\\omega\\rightarrow \\mathbb{R}\\) that describes the probability of \\(X\\) taking each value \\(\\omega\\in\\Omega\\). Equivalently, \\(f(\\omega)=\\mathbb{P}(X=\\omega)\\). The following must hold for any PDF:\n\n$$\\int_{\\infty}^\\infty p(x)dx = 1$$\n\nNote that the PDF is describing how our random variable \\(X\\) is distributed over \\(\\Omega\\). In other words, PDFs describe probability distributions.",
 
     "creationDate": "2023-11-19T14:12:47.207Z",
-    "editDate": "2023-11-21T02:36:26.530Z",
+    "editDate": "2023-11-21T06:09:04.051Z",
 
     "categories": ["probability theory"],
-    "subcards": ["conditional-probability","cumulative-density-function-(cdf)","joint-probability-distribution(jpd)","marginal-pdf"]
+    "subcards": ["cumulative-density-function-(cdf)","joint-probability-distribution(jpd)","marginal-pdf"]
 }

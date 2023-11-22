@@ -1,0 +1,27 @@
+
+.card-group {
+    border: 1px solid black;
+    border-radius: 2px;
+    padding: 8px;
+
+    max-width: 100%;
+    max-height: 256px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    margin-bottom: 8px;
+}
+
+.card-group-name {
+    cursor: pointer;
+}
+
+.card-group-subcard-header {
+    margin-bottom: 2px;
+}
+
+.card-group-subcard-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.33em;
+}

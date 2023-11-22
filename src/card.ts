@@ -1,5 +1,8 @@
 import { fromJSONSafeText, toJSONSafeText } from "./util/json-text-converter";
 import { copyToClipboard } from "./util/clipboard";
+import { addItemToStack } from "./features/search-stack";
+import { LeftPaneType, whichLeftPaneActive } from "./features/pane-management";
+import { addItemToDesktop } from "./features/desktop";
 
 export interface CardJSON {
     name: string;
@@ -22,8 +25,10 @@ export class Card {
     editDate: Date;
 
     node: HTMLDivElement;
+    nodeDesktopCopy: HTMLDivElement;
     nodeID: string;
     displayMetaData: boolean;
+    activeName: boolean;
 
     constructor(name: string, description: string, id: string = ''){
         this.name = name;
@@ -36,16 +41,18 @@ export class Card {
         this.subCards = [];
 
         this.displayMetaData = true;
-        this.node = document.createElement('div');
+        this.activeName = true;
+        this.node = this.constructNodeInternal(id);
+        this.nodeDesktopCopy = this.constructNodeInternal(id);
         this.nodeID = id.length > 0 ? id : this.uniqueID;
-        this.constructNode(id);
-    }
-
-    static constructFromOldJSON(object: any){
-        
     }
 
     constructNode(id: string){
+        this.node = this.constructNodeInternal(id);
+        this.nodeDesktopCopy = this.constructNodeInternal(id);
+    }
+
+    constructNodeInternal(id: string){
         // create base node
         const node = document.createElement('div');
         const nameNode = document.createElement('h2');
@@ -54,6 +61,16 @@ export class Card {
         descriptionNode.innerHTML = this.description;
         node.appendChild(nameNode);
         node.appendChild(descriptionNode);
+
+        nameNode.className = 'card-name';
+        nameNode.addEventListener('click', () => {
+            if(!this.activeName) return;
+            if(whichLeftPaneActive() === LeftPaneType.Desktop){
+                addItemToDesktop(this);
+            } else {
+                addItemToStack(this);
+            }
+        });
 
         // create subcards
         if(this.subCards.length > 0){
@@ -90,6 +107,7 @@ export class Card {
             subcardNode.appendChild(subcardHeader);
             subcardNode.appendChild(subcardContainer);
             node.appendChild(subcardNode);
+            console.log('create subcards')
         }
 
         // add buttons
@@ -113,9 +131,15 @@ export class Card {
             node.appendChild(metaDisplay);
         }
 
+        // finalize node construction
         node.className = 'card';
         if(id.length > 0) node.id = id;
-        this.node = node;
+        console.log(node);
+        return node;
+    } 
+
+    disableNameAdding(){
+        this.activeName = false;
     }
 
     setDates(creationDate: Date, editDate: Date){
@@ -149,5 +173,9 @@ export class Card {
     
     getNode(){
         return this.node;
+    }
+
+    getDesktopNode(){
+        return this.nodeDesktopCopy;
     }
 }

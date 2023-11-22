@@ -11,7 +11,7 @@ export enum RightPaneType {
     Hierarchy
 }
 
-export const initPaneManagement = () => {
+export const initPaneManagement = (defaultLeft: LeftPaneType = LeftPaneType.SearchStack, defaultRight: RightPaneType = RightPaneType.CreateCardGroup) => {
     const leftPaneDesktop = document.getElementById("left-pane-desktop") as HTMLDivElement;
     const leftPaneSearchStack = document.getElementById("left-pane-search-stack") as HTMLDivElement;
     const rightPaneCreateCard = document.getElementById("right-pane-create-card") as HTMLDivElement;
@@ -60,6 +60,21 @@ export const initPaneManagement = () => {
     rightPaneButtonMetadata.addEventListener('click', () => rightPaneClicked(RightPaneType.Metadata));
     rightPaneButtonHierarchy.addEventListener('click', () => rightPaneClicked(RightPaneType.Hierarchy));
 
-    // disable select buttons
+    // finalize pane management and disable select buttons
+    leftPaneClicked(defaultLeft);
+    rightPaneClicked(defaultRight);
     rightPaneButtonMetadata.style.display = 'none';
+}
+
+export const whichLeftPaneActive = () => {
+    const leftPaneDesktop = document.getElementById("left-pane-desktop") as HTMLDivElement;
+    const leftPaneSearchStack = document.getElementById("left-pane-search-stack") as HTMLDivElement;
+
+    if(leftPaneDesktop.style.display !== 'none'){
+        return LeftPaneType.Desktop;
+    } else if(leftPaneSearchStack.style.display !== 'none'){
+        return LeftPaneType.SearchStack;
+    } else {
+        return LeftPaneType.SearchStack; // default to the search stack
+    }
 }
