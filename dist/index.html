@@ -16,7 +16,7 @@
         <div id="container">
             <div id="left-pane-outer-container">
                 <div id="left-pane-scroll-container">
-                    <div id="left-pane-desktop" class="left-pane" style="display: none;">
+                    <div id="left-pane-desktop" class="left-pane left-pane-width" style="display: none;">
                         <div id="desktop-top-bar">
                             <label style="padding-top: 2px;" id="desktop-label">Desktop</label>
                             <button id="desktop-clear-button">Clear</button>
@@ -28,7 +28,7 @@
                         <div id="desktop-container"></div>
                     </div>
 
-                    <div id="left-pane-search-stack" class="left-pane">
+                    <div id="left-pane-search-stack" class="left-pane left-pane-width">
                         <div id="search-stack-top-bar">
                             <label style="padding-top: 2px;">Search Stack</label>
                             <button id="search-stack-clear-button">Clear</button>
@@ -43,7 +43,7 @@
             </div>
             <div id="right-pane-outer-container">
                 <div id="right-pane-scroll-container">
-                    <div id="right-pane-create-card" class="right-pane">
+                    <div id="right-pane-create-card" class="right-pane right-pane-width">
                         <label>Card Name</label>
                         <input id="card-name-input" type="text">
                         <label>Card Description</label>
@@ -67,7 +67,7 @@
                         <textarea id="card-subcard-input" rows="8"></textarea>
                     </div>
 
-                    <div id="right-pane-create-card-group" class="right-pane" style="display: none;">
+                    <div id="right-pane-create-card-group" class="right-pane right-pane-width" style="display: none;">
                         <label>Card Group Name</label>
                         <input id="card-group-name-input" type="text">
 
@@ -89,7 +89,7 @@
                         <textarea id="card-group-category-input" rows="8"></textarea>
                     </div>
 
-                    <div id="right-pane-search" class="right-pane" style="display: none;">
+                    <div id="right-pane-search" class="right-pane right-pane-width" style="display: none;">
                         <label>Search query</label>
                         <input id="search-query-input" type="text">
                         <div id="search-filter-container">
@@ -103,11 +103,11 @@
                         <div id="search-results-container"></div>
                     </div>
 
-                    <div id="right-pane-metadata" class="right-pane" style="display: none;">
+                    <div id="right-pane-metadata" class="right-pane right-pane-width" style="display: none;">
                         <label>Metadata</label>
                     </div>
 
-                    <div id="right-pane-hierarchy" class="right-pane" style="display: none;">
+                    <div id="right-pane-hierarchy" class="right-pane right-pane-width" style="display: none;">
                         <label>Global Hierarchy</label>
                         <div id="hierarchy-root">
                             <div id="hierarchy-empty"></div>
@@ -122,6 +122,13 @@
                     <button id="right-pane-button-metadata" class="pane-tab">Metadata</button>
                 </div>
             </div>
+        </div>
+        <div id="bottom-container">
+            <label>View Layout</label>
+            <button id="ratio-button-1-1">1:1 Ratio</button>
+            <button id="ratio-button-2-1">2:1 Ratio</button>
+            <button id="ratio-button-3-1">4:1 Ratio</button>
+            <button id="ratio-button-4-1">6:1 Ratio</button>
         </div>
         <script src="bundle.js"></script>
     </body>

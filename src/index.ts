@@ -9,6 +9,7 @@ import { initHierarchy } from "./features/hierarchy";
 import { initSearch } from "./features/search";
 import { initSearchStack } from "./features/search-stack";
 import { initDesktop } from "./features/desktop";
+import { initPaneResizing } from "./features/pane-resizing";
 
 const loadCards = async () => {
     const cardMap = await loadData('../card-map.json');
@@ -57,7 +58,16 @@ const init = async () => {
     //     leftPaneNode.append(createVSpacer(8));
     // });
 
-    initPaneManagement(LeftPaneType.Desktop, RightPaneType.Search);
+    const prevSelectedLeftPane = localStorage.getItem('selected-left-pane');
+    const prevSelectedRightPane = localStorage.getItem('selected-right-pane');
+    if(prevSelectedLeftPane !== null && prevSelectedRightPane !== null){
+        const prevLeft = parseInt(prevSelectedLeftPane) as LeftPaneType;
+        const prevRight = parseInt(prevSelectedRightPane) as RightPaneType;
+        initPaneManagement(prevLeft, prevRight);
+    } else {
+        initPaneManagement(LeftPaneType.Desktop, RightPaneType.Search);
+    }
+
     initCardAuthoring();
     initCardGroupAuthoring();
     initHierarchy(cards, cardGroups);
@@ -65,7 +75,8 @@ const init = async () => {
 
     initSearchStack(cards, cardGroups);
     initDesktop(cards, cardGroups);
-
+    initPaneResizing();
+    
     // @ts-ignore
     if (window.MathJax) MathJax.typeset();
 }

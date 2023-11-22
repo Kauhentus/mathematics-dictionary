@@ -37,6 +37,7 @@ export const initPaneManagement = (defaultLeft: LeftPaneType = LeftPaneType.Sear
             if(pair[1] === selectedPane) pair[0].style.display = 'flex';
             else pair[0].style.display = 'none';
         });
+        localStorage.setItem('selected-left-pane', selectedPane.toString());
     }
     const rightPaneNodeEnumPairs: [HTMLDivElement, RightPaneType][] = [
         [rightPaneCreateCard, RightPaneType.CreateCard],
@@ -50,6 +51,7 @@ export const initPaneManagement = (defaultLeft: LeftPaneType = LeftPaneType.Sear
             if(pair[1] === selectedPane) pair[0].style.display = 'flex';
             else pair[0].style.display = 'none';
         });
+        localStorage.setItem('selected-right-pane', selectedPane.toString());
     }
     
     leftPaneButtonDesktop.addEventListener('click', () => leftPaneClicked(LeftPaneType.Desktop));
