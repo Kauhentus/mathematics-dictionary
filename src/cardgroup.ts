@@ -1,8 +1,8 @@
 import { fromJSONSafeText, toJSONSafeText } from "./util/json-text-converter";
 import { Card } from "./card";
 import { copyToClipboard } from "./util/clipboard";
-import { addItemToStack } from "./features/search-stack";
-import { addItemToDesktop } from "./features/desktop";
+import { addItemToStack, removeItemFromStack } from "./features/search-stack";
+import { addItemToDesktop, removeItemFromDesktop } from "./features/desktop";
 import { whichLeftPaneActive, LeftPaneType } from "./features/pane-management";
 
 export interface CardGroupJSON {
@@ -56,6 +56,16 @@ export class CardGroup {
         node.appendChild(descriptionNode);
 
         nameNode.className = 'card-group-name';
+        nameNode.addEventListener('contextmenu', (event) => {
+            if(!this.activeName) return;
+            event.preventDefault();
+            if(whichLeftPaneActive() === LeftPaneType.Desktop){
+                removeItemFromDesktop(this);
+            } else {
+                removeItemFromStack(this);
+            }
+            return false;
+        });
         nameNode.addEventListener('click', () => {
             if(!this.activeName) return;
             if(whichLeftPaneActive() === LeftPaneType.Desktop){

@@ -57,13 +57,13 @@ const init = async () => {
     //     leftPaneNode.append(createVSpacer(8));
     // });
 
-    initPaneManagement(LeftPaneType.SearchStack, RightPaneType.Search);
+    initPaneManagement(LeftPaneType.Desktop, RightPaneType.Search);
     initCardAuthoring();
     initCardGroupAuthoring();
     initHierarchy(cards, cardGroups);
     initSearch(cards, cardGroups);
 
-    initSearchStack();
+    initSearchStack(cards, cardGroups);
     initDesktop(cards, cardGroups);
 
     // @ts-ignore

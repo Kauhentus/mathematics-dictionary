@@ -5,6 +5,8 @@ import { getHHMM, getMMDDYYYY } from "../util/date";
 
 let selectedSlot: HTMLDivElement | null = null;
 let slotNodes : HTMLDivElement[] = [];
+let columns = 2;
+let slots = 50;
 
 export type DesktopExportJSON = {
     columns: number,
@@ -17,9 +19,6 @@ export const initDesktop = (cards: Card[], cardGroups: CardGroup[]) => {
     const combinedItems: (Card | CardGroup)[] = [...cards, ...cardGroups];
 
     // create interactive surface
-    let columns = 2;
-    let slots = 50;
-
     const clickOnSlot = (slot: HTMLDivElement) => {
         // deactivate slot if card/cardgroup is already inside slot
         if(slot.children.length > 0) return;
@@ -107,6 +106,7 @@ export const initDesktop = (cards: Card[], cardGroups: CardGroup[]) => {
             node.style.cursor = 'pointer';
         });
         selectedSlot = null;
+        saveDesktop();
     });
 
     importButton.addEventListener('click', () => importFileInput.click());
@@ -119,6 +119,7 @@ export const initDesktop = (cards: Card[], cardGroups: CardGroup[]) => {
         slots = importData.slots;
         constructSurface(importData.data);
         importFileInput.value = '';
+        saveDesktop();
     });
     exportButton.addEventListener('click', () => {
         const exportData : DesktopExportJSON = {
@@ -134,6 +135,35 @@ export const initDesktop = (cards: Card[], cardGroups: CardGroup[]) => {
         };
         downloadFile(`desktop-${getHHMM()}-${getMMDDYYYY()}.json`, JSON.stringify(exportData, null, 4));
     });
+
+    // local storage loading...
+    const importDataJSON = localStorage.getItem("desktop-data");
+    if(importDataJSON !== null){
+        try {
+            const importData: DesktopExportJSON = JSON.parse(importDataJSON);
+            columns = importData.columns;
+            slots = importData.slots;
+            constructSurface(importData.data);
+        } catch(e){
+
+        }
+    }
+}
+
+// local storage desktop saving...
+export const saveDesktop = () => {
+    const data : DesktopExportJSON = {
+        columns: columns,
+        slots: slots,
+        data: slotNodes.map(slot => {
+            if(slot.children.length === 0){
+                return null;
+            } else {
+                return slot.children[0].id;
+            }
+        })
+    };
+    localStorage.setItem("desktop-data", JSON.stringify(data));
 }
 
 export const addItemToDesktop = (item : Card | CardGroup) => {
@@ -148,4 +178,12 @@ export const addItemToDesktop = (item : Card | CardGroup) => {
     selectedSlot.style.borderStyle = 'dashed';
     selectedSlot.style.cursor = 'default';
     selectedSlot = null;
+
+    saveDesktop();
+}
+
+export const removeItemFromDesktop = (item : Card | CardGroup) => {
+    const currentNode = item.getDesktopNode();
+    currentNode.remove();
+    saveDesktop();
 }

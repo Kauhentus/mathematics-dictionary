@@ -1,8 +1,8 @@
 import { fromJSONSafeText, toJSONSafeText } from "./util/json-text-converter";
 import { copyToClipboard } from "./util/clipboard";
-import { addItemToStack } from "./features/search-stack";
+import { addItemToStack, removeItemFromStack } from "./features/search-stack";
 import { LeftPaneType, whichLeftPaneActive } from "./features/pane-management";
-import { addItemToDesktop } from "./features/desktop";
+import { addItemToDesktop, removeItemFromDesktop } from "./features/desktop";
 
 export interface CardJSON {
     name: string;
@@ -63,6 +63,16 @@ export class Card {
         node.appendChild(descriptionNode);
 
         nameNode.className = 'card-name';
+        nameNode.addEventListener('contextmenu', (event) => {
+            if(!this.activeName) return;
+            event.preventDefault();
+            if(whichLeftPaneActive() === LeftPaneType.Desktop){
+                removeItemFromDesktop(this);
+            } else {
+                removeItemFromStack(this);
+            }
+            return false;
+        });
         nameNode.addEventListener('click', () => {
             if(!this.activeName) return;
             if(whichLeftPaneActive() === LeftPaneType.Desktop){
@@ -134,7 +144,6 @@ export class Card {
         // finalize node construction
         node.className = 'card';
         if(id.length > 0) node.id = id;
-        console.log(node);
         return node;
     } 
 
