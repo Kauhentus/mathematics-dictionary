@@ -1,6 +1,7 @@
 import { fromJSONSafeText } from "../util/json-text-converter";
 import { Card } from "../card";
 import { copyToClipboard, copyFromClipboard } from "../util/clipboard";
+import { downloadFile } from "../util/download";
 
 export const initCardAuthoring = async () => {
     const cardNameInput = document.getElementById('card-name-input') as HTMLInputElement;
@@ -65,10 +66,14 @@ export const initCardAuthoring = async () => {
     cardCategoryInput.addEventListener('input', descriptionInputUpdate);
     cardSubcardInput.addEventListener('input', descriptionInputUpdate);
 
+    const downloadButton = document.getElementById('card-authoring-download-button') as HTMLButtonElement;
     const copyButton = document.getElementById('card-authoring-copy-button') as HTMLButtonElement;
     const pasteButton = document.getElementById('card-authoring-paste-button') as HTMLButtonElement;
     const clearButton = document.getElementById('card-authoring-clear-button') as HTMLButtonElement;
     
+    downloadButton.addEventListener('click', () => {
+        downloadFile(`${cardNameInput.value.replace(/ /g, '-').toLocaleLowerCase()}.json`, cardDescriptionOutput.value);
+    });
     copyButton.addEventListener('click', () => {
         copyToClipboard(cardDescriptionOutput.value);
     });
