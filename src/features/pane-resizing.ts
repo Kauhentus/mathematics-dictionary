@@ -10,7 +10,6 @@ export const initPaneResizing = () => {
         const rightWidth = Math.floor(right / (left + right) * totalWidth);
         
         const stylesheet = document.styleSheets[0]; // should be /web/style.css
-        console.log(stylesheet);
         for(let rule of stylesheet.cssRules){
             let sr = rule as CSSStyleRule;
             if(sr.selectorText === '.left-pane-width'){
@@ -36,10 +35,9 @@ export const initPaneResizing = () => {
     if(prevPaneRatioJSON !== null){
         try {
             const prevPaneRatio = JSON.parse(prevPaneRatioJSON);
-            console.log(prevPaneRatio)
             changePaneRatio(prevPaneRatio.left, prevPaneRatio.right)();
         } catch(e){
-            console.log(e)
+            
         }
     }
 }

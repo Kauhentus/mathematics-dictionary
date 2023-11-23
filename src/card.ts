@@ -1,7 +1,7 @@
 import { fromJSONSafeText, toJSONSafeText } from "./util/json-text-converter";
 import { copyToClipboard } from "./util/clipboard";
 import { addItemToStack, removeItemFromStack } from "./features/search-stack";
-import { LeftPaneType, whichLeftPaneActive } from "./features/pane-management";
+import { LeftPaneType, switchToDesktop, whichLeftPaneActive } from "./features/pane-management";
 import { addItemToDesktop, removeItemFromDesktop } from "./features/desktop";
 
 export interface CardJSON {
@@ -29,6 +29,7 @@ export class Card {
     nodeID: string;
     displayMetaData: boolean;
     activeName: boolean;
+    copyToDesktopButton: HTMLElement;
 
     constructor(name: string, description: string, id: string = ''){
         this.name = name;
@@ -42,17 +43,18 @@ export class Card {
 
         this.displayMetaData = true;
         this.activeName = true;
+        this.copyToDesktopButton = document.createElement('div');
+        this.nodeDesktopCopy = this.constructNodeInternal(id, true);
         this.node = this.constructNodeInternal(id);
-        this.nodeDesktopCopy = this.constructNodeInternal(id);
         this.nodeID = id.length > 0 ? id : this.uniqueID;
     }
 
     constructNode(id: string){
+        this.nodeDesktopCopy = this.constructNodeInternal(id, true);
         this.node = this.constructNodeInternal(id);
-        this.nodeDesktopCopy = this.constructNodeInternal(id);
     }
 
-    constructNodeInternal(id: string){
+    constructNodeInternal(id: string, isDesktop = false){
         // create base node
         const node = document.createElement('div');
         const nameNode = document.createElement('h2');
@@ -73,13 +75,14 @@ export class Card {
             }
             return false;
         });
-        nameNode.addEventListener('click', () => {
+        nameNode.addEventListener('click', (event) => {
             if(!this.activeName) return;
             if(whichLeftPaneActive() === LeftPaneType.Desktop){
                 addItemToDesktop(this);
             } else {
                 addItemToStack(this);
             }
+            event.stopPropagation();
         });
 
         // create subcards
@@ -117,7 +120,6 @@ export class Card {
             subcardNode.appendChild(subcardHeader);
             subcardNode.appendChild(subcardContainer);
             node.appendChild(subcardNode);
-            console.log('create subcards')
         }
 
         // add buttons
@@ -130,6 +132,15 @@ export class Card {
         copyUniqueIDButton.innerHTML = 'Copy ID';
         copyUniqueIDButton.addEventListener('click', () => copyToClipboard(this.uniqueID));
         buttonRow.appendChild(copyUniqueIDButton)
+        const copyToDesktopButton = document.createElement('button');
+        copyToDesktopButton.innerHTML = 'Copy to Desktop';
+        copyToDesktopButton.addEventListener('click', () => {
+            addItemToDesktop(this);
+            switchToDesktop();
+        });
+        copyToDesktopButton.style.display = 'none';
+        if(!isDesktop) this.copyToDesktopButton = copyToDesktopButton;
+        buttonRow.appendChild(copyToDesktopButton)
         buttonRow.className = 'card-button-row';
         node.appendChild(buttonRow);
 
@@ -149,6 +160,14 @@ export class Card {
 
     disableNameAdding(){
         this.activeName = false;
+    }
+
+    enableCopyToDesktop(){
+        this.copyToDesktopButton.style.display = 'inline';
+    }
+
+    disableCopyToDesktop(){
+        this.copyToDesktopButton.style.display = 'none';
     }
 
     setDates(creationDate: Date, editDate: Date){

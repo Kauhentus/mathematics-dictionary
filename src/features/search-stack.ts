@@ -20,6 +20,7 @@ export const initSearchStack = (cards: Card[], cardGroups: CardGroup[]) => {
                 const item = combinedItems.find(item => item.uniqueID === id);
                 if(!item) return;
                 searchStackContainer.append(item.getNode());
+                item.enableCopyToDesktop();
             });
         } catch(e){
 
@@ -38,6 +39,7 @@ export const saveStack = () => {
 
 export const addItemToStack = (item : Card | CardGroup) => {
     const currentNode = item.getNode();
+    item.enableCopyToDesktop();
     // @ts-ignore
     if (window.MathJax) MathJax.typeset([currentNode]);
     searchStackContainer.prepend(currentNode);
@@ -46,6 +48,7 @@ export const addItemToStack = (item : Card | CardGroup) => {
 
 export const removeItemFromStack = (item : Card | CardGroup) => {
     const currentNode = item.getNode();
+    item.disableCopyToDesktop();
     currentNode.remove();
     saveStack();
 }

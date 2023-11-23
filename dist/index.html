@@ -35,10 +35,46 @@
                         </div>
                         <div id="search-stack-container"></div>
                     </div>
+
+                    <div id="left-pane-about" class="left-pane left-pane-width" style="display: none;">
+                        <h3 style="margin-top: 0px; margin-bottom: 0px;">About Josh's Mathematics Database</h3>
+                        <p class="about-paragraph-section">
+                            This searchable database consists of "cards" covering concepts 
+                            across various fields of mathematics.
+                            
+                            This project was born from a compulsion to collate years of mathematics notes into
+                            one searchable platform. 
+
+                            Feel free to create your own cards and send the JSON files to joshua_yang (at) brown.edu 
+                            if you want them to be added to the database! 
+                        </p>
+                        <p>
+                            Check out the Github repository here: https://github.com/Kauhentus/mathematics-dictionary
+                        </p>
+
+                        <h3 style="margin-top: 0px; margin-bottom: 0px;">How do I use this database?</h3>
+                        <p class="about-paragraph-section">
+                            The left pane has two display "surfaces" that can be used to view/hold cards. 
+                            The "desktop" stores cards on a grid which can be added, reordered, and deleted. 
+                            Be sure to select a grid slot to add a card (by clicking on card headers). 
+                            Left click adds while right click deletes.
+                            The "search stack" works similarly, except stores cards on a stack as a temporary form of storage.
+                        </p>
+                        <p class="about-paragraph-section">
+                            The right pane has multiple functions. The "search" pane allows you to search and query the database.
+                            The "hierarchy" pane allows you to view the entire tree of cards and card groups.
+                            Meanwhile, the "create card" pane allows you to author cards which are exported as JSON.
+                            The "create card group" pane similarly allows you to author card groups which are exported as JSON.
+                        </p>
+                        <p class="about-paragraph-section">
+                            You can rearrange and scale the pane sizes using the ratio settings at the bottom of the page.
+                        </p>
+                    </div>
                 </div>
                 <div id="left-pane-tabs">
                     <button id="left-pane-button-desktop" class="pane-tab">Desktop</button>
                     <button id="left-pane-button-search-stack" class="pane-tab">Search Stack</button>
+                    <button id="left-pane-button-about" class="pane-tab">About/Help</button>
                 </div>
             </div>
             <div id="right-pane-outer-container">

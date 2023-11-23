@@ -14,9 +14,12 @@ export type DesktopExportJSON = {
     data: (string | null)[]
 };
 
+let localRefCombinedItems: (Card | CardGroup)[];
+
 export const initDesktop = (cards: Card[], cardGroups: CardGroup[]) => {
     const desktopSurface = document.getElementById('desktop-container') as HTMLElement;
     const combinedItems: (Card | CardGroup)[] = [...cards, ...cardGroups];
+    localRefCombinedItems = combinedItems;
 
     // create interactive surface
     const clickOnSlot = (slot: HTMLDivElement) => {
@@ -36,6 +39,7 @@ export const initDesktop = (cards: Card[], cardGroups: CardGroup[]) => {
         } else {
             selectedSlot = null;
         }
+        toggleCopyToDesktopButtonActive(combinedItems);
 
         // handle dynamic cursor over
         slotNodes.forEach(slot => {
@@ -89,6 +93,7 @@ export const initDesktop = (cards: Card[], cardGroups: CardGroup[]) => {
             }
         }
         selectedSlot = null;
+        toggleCopyToDesktopButtonActive(combinedItems);
     }
     constructSurface();
 
@@ -106,6 +111,7 @@ export const initDesktop = (cards: Card[], cardGroups: CardGroup[]) => {
             node.style.cursor = 'pointer';
         });
         selectedSlot = null;
+        toggleCopyToDesktopButtonActive(combinedItems);
         saveDesktop();
     });
 
@@ -179,6 +185,7 @@ export const addItemToDesktop = (item : Card | CardGroup) => {
     selectedSlot.style.cursor = 'default';
     selectedSlot = null;
 
+    toggleCopyToDesktopButtonActive(localRefCombinedItems);
     saveDesktop();
 }
 
@@ -186,4 +193,16 @@ export const removeItemFromDesktop = (item : Card | CardGroup) => {
     const currentNode = item.getDesktopNode();
     currentNode.remove();
     saveDesktop();
+}
+
+export const toggleCopyToDesktopButtonActive = (combinedItems: (Card | CardGroup)[]) => {
+    const slotSelected = selectedSlot !== null;
+    for(let item of combinedItems){
+        const button = item.copyToDesktopButton as HTMLButtonElement;
+        if(slotSelected){
+            button.disabled = false;
+        } else {
+            button.disabled = true;
+        }
+    }
 }

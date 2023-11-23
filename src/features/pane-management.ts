@@ -1,6 +1,7 @@
 export enum LeftPaneType {
     Desktop,
-    SearchStack
+    SearchStack,
+    About
 }
 
 export enum RightPaneType {
@@ -14,6 +15,7 @@ export enum RightPaneType {
 export const initPaneManagement = (defaultLeft: LeftPaneType = LeftPaneType.SearchStack, defaultRight: RightPaneType = RightPaneType.CreateCardGroup) => {
     const leftPaneDesktop = document.getElementById("left-pane-desktop") as HTMLDivElement;
     const leftPaneSearchStack = document.getElementById("left-pane-search-stack") as HTMLDivElement;
+    const leftPaneAbout = document.getElementById("left-pane-about") as HTMLDivElement;
     const rightPaneCreateCard = document.getElementById("right-pane-create-card") as HTMLDivElement;
     const rightPaneCreateCardGroup = document.getElementById("right-pane-create-card-group") as HTMLDivElement;
     const rightPaneSearch = document.getElementById("right-pane-search") as HTMLDivElement;
@@ -22,6 +24,7 @@ export const initPaneManagement = (defaultLeft: LeftPaneType = LeftPaneType.Sear
     
     const leftPaneButtonDesktop = document.getElementById("left-pane-button-desktop") as HTMLDivElement;
     const leftPaneButtonSearchStack = document.getElementById("left-pane-button-search-stack") as HTMLDivElement;
+    const leftPaneButtonAbout = document.getElementById("left-pane-button-about") as HTMLDivElement;
     const rightPaneButtonCreateCard = document.getElementById("right-pane-button-create-card") as HTMLButtonElement;
     const rightPaneButtonCreateCardGroup = document.getElementById("right-pane-button-create-card-group") as HTMLButtonElement;
     const rightPaneButtonSearch = document.getElementById("right-pane-button-search") as HTMLButtonElement;
@@ -30,7 +33,8 @@ export const initPaneManagement = (defaultLeft: LeftPaneType = LeftPaneType.Sear
     
     const leftPaneNodeEnumPairs: [HTMLDivElement, LeftPaneType][] = [
         [leftPaneDesktop, LeftPaneType.Desktop],
-        [leftPaneSearchStack, LeftPaneType.SearchStack]
+        [leftPaneSearchStack, LeftPaneType.SearchStack],
+        [leftPaneAbout, LeftPaneType.About]
     ];
     const leftPaneClicked = (selectedPane: LeftPaneType) => {
         leftPaneNodeEnumPairs.forEach(pair => {
@@ -56,6 +60,7 @@ export const initPaneManagement = (defaultLeft: LeftPaneType = LeftPaneType.Sear
     
     leftPaneButtonDesktop.addEventListener('click', () => leftPaneClicked(LeftPaneType.Desktop));
     leftPaneButtonSearchStack.addEventListener('click', () => leftPaneClicked(LeftPaneType.SearchStack));
+    leftPaneButtonAbout.addEventListener('click', () => leftPaneClicked(LeftPaneType.About));
     rightPaneButtonCreateCard.addEventListener('click', () => rightPaneClicked(RightPaneType.CreateCard));
     rightPaneButtonCreateCardGroup.addEventListener('click', () => rightPaneClicked(RightPaneType.CreateCardGroup));
     rightPaneButtonSearch.addEventListener('click', () => rightPaneClicked(RightPaneType.Search));
@@ -66,6 +71,24 @@ export const initPaneManagement = (defaultLeft: LeftPaneType = LeftPaneType.Sear
     leftPaneClicked(defaultLeft);
     rightPaneClicked(defaultRight);
     rightPaneButtonMetadata.style.display = 'none';
+}
+
+export const switchToDesktop = () => {
+    const leftPaneDesktop = document.getElementById("left-pane-desktop") as HTMLDivElement;
+    const leftPaneSearchStack = document.getElementById("left-pane-search-stack") as HTMLDivElement;
+    const leftPaneAbout = document.getElementById("left-pane-about") as HTMLDivElement;
+    const leftPaneNodeEnumPairs: [HTMLDivElement, LeftPaneType][] = [
+        [leftPaneDesktop, LeftPaneType.Desktop],
+        [leftPaneSearchStack, LeftPaneType.SearchStack],
+        [leftPaneAbout, LeftPaneType.About]
+    ];
+    
+    const selectedPane = LeftPaneType.Desktop;
+    leftPaneNodeEnumPairs.forEach(pair => {
+        if(pair[1] === selectedPane) pair[0].style.display = 'flex';
+        else pair[0].style.display = 'none';
+    });
+    localStorage.setItem('selected-left-pane', selectedPane.toString());
 }
 
 export const whichLeftPaneActive = () => {
