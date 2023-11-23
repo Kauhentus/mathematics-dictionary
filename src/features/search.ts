@@ -47,7 +47,6 @@ export const initSearch = (cards: Card[], cardGroups: CardGroup[]) => {
 
         results.forEach(result => {
             const isCard = result.ref.slice(0, 3) !== '[g]';
-            console.log(result)
             if(searchFilterCardsOnly.checked && !searchFilterCardgroupsOnly.checked){
                 if(!isCard) return;
             } else if(!searchFilterCardsOnly.checked && searchFilterCardgroupsOnly.checked){
