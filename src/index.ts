@@ -12,7 +12,7 @@ import { initDesktop } from "./features/desktop";
 import { initPaneResizing } from "./features/pane-resizing";
 
 const loadCards = async () => {
-    const cardMap = await loadData('../card-map.json');
+    const cardMap = await loadData('./card-map.json');
     const paths: string[] = cardMap.files;
     const cardsJSON = await Promise.all(paths.map(path => loadData(`../data-cards/${path}.json`)));
 
@@ -20,7 +20,7 @@ const loadCards = async () => {
 }
 
 const loadCardGroups = async () => {
-    const cardMap = await loadData('../card-group-map.json');
+    const cardMap = await loadData('./card-group-map.json');
     const paths: string[] = cardMap.files;
     const cardsJSON = await Promise.all(paths.map(path => loadData(`../data-card-groups/${path}.json`)));
 
