@@ -28,7 +28,7 @@ export class CardGroup {
 
     constructor(name: string, description: string, id: string = ''){
         this.name = name;
-        this.uniqueID = '[G]' + name.replace(/ /g, '-').toLocaleLowerCase();
+        this.uniqueID = '[g]' + name.replace(/ /g, '-').toLocaleLowerCase();
         this.description = fromJSONSafeText(description);
 
         this.childrenIDs = [];
