@@ -1,6 +1,6 @@
 {
     "name": "Polytope Theory",
-    "uniqueID": "[G]polytope-theory",
+    "uniqueID": "[g]polytope-theory",
     "description": "",
     "childrenIDs": ["simplex"]
 }

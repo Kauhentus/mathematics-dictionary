@@ -1,6 +1,6 @@
 {
     "name": "Monte Carlo Methods",
-    "uniqueID": "[G]monte-carlo-methods",
+    "uniqueID": "[g]monte-carlo-methods",
     "description": "",
     "childrenIDs": ["monte-carlo-markov-chain-(mcmc)","monte-carlo-estimator","importance-sampling"]
 }
