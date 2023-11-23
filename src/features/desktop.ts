@@ -14,12 +14,12 @@ export type DesktopExportJSON = {
     data: (string | null)[]
 };
 
-let localRefCombinedItems: (Card | CardGroup)[];
+export let refCombinedItems: (Card | CardGroup)[];
 
 export const initDesktop = (cards: Card[], cardGroups: CardGroup[]) => {
     const desktopSurface = document.getElementById('desktop-container') as HTMLElement;
     const combinedItems: (Card | CardGroup)[] = [...cards, ...cardGroups];
-    localRefCombinedItems = combinedItems;
+    refCombinedItems = combinedItems;
 
     // create interactive surface
     const clickOnSlot = (slot: HTMLDivElement) => {
@@ -185,7 +185,7 @@ export const addItemToDesktop = (item : Card | CardGroup) => {
     selectedSlot.style.cursor = 'default';
     selectedSlot = null;
 
-    toggleCopyToDesktopButtonActive(localRefCombinedItems);
+    toggleCopyToDesktopButtonActive(refCombinedItems);
     saveDesktop();
 }
 

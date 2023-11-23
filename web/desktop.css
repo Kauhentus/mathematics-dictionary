@@ -6,11 +6,13 @@
 #desktop-container {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .desktop-row {
     display: flex;
     flex-direction: row;
+    width: 100%;
 }
 
 .desktop-margin-left {
@@ -19,7 +21,7 @@
 
 .desktop-slot {
     border: 1px lightgray dashed;
-    width: 100%;
+    width: 49%;
     min-height: 64px;
     margin-bottom: 8px;
 

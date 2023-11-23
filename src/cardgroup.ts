@@ -2,7 +2,7 @@ import { fromJSONSafeText, toJSONSafeText } from "./util/json-text-converter";
 import { Card } from "./card";
 import { copyToClipboard } from "./util/clipboard";
 import { addItemToStack, removeItemFromStack } from "./features/search-stack";
-import { addItemToDesktop, removeItemFromDesktop } from "./features/desktop";
+import { addItemToDesktop, refCombinedItems, removeItemFromDesktop } from "./features/desktop";
 import { whichLeftPaneActive, LeftPaneType, switchToDesktop } from "./features/pane-management";
 
 export interface CardGroupJSON {
@@ -93,6 +93,15 @@ export class CardGroup {
             const subcardItem = document.createElement('div');
             subcardItem.innerHTML = `- ${this.childrenIDs[i]}`;
             subcardItem.className = 'card-group-subcard-item';
+            subcardItem.style.cursor = 'pointer';
+            subcardItem.addEventListener('click', (event) => {
+                const item = refCombinedItems.find(item => item.uniqueID === this.childrenIDs[i]);
+                if(item === undefined) return;
+                else if(!this.activeName) return;
+                
+                if(whichLeftPaneActive() === LeftPaneType.Desktop) addItemToDesktop(item);
+                else addItemToStack(item);
+            });
             return subcardItem;
         }
         

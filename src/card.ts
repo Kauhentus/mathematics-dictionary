@@ -2,7 +2,7 @@ import { fromJSONSafeText, toJSONSafeText } from "./util/json-text-converter";
 import { copyToClipboard } from "./util/clipboard";
 import { addItemToStack, removeItemFromStack } from "./features/search-stack";
 import { LeftPaneType, switchToDesktop, whichLeftPaneActive } from "./features/pane-management";
-import { addItemToDesktop, removeItemFromDesktop } from "./features/desktop";
+import { addItemToDesktop, refCombinedItems, removeItemFromDesktop } from "./features/desktop";
 
 export interface CardJSON {
     name: string;
@@ -92,7 +92,7 @@ export class Card {
             const subcardContainer = document.createElement('div');
             const leftSubcardList = document.createElement('div');
             const rightSubcardList = document.createElement('div');
-            subcardHeader.innerHTML = 'Subcards:'
+            subcardHeader.innerHTML = 'Related:'
             subcardHeader.className = 'card-subcard-header';
             subcardContainer.appendChild(leftSubcardList);
             subcardContainer.appendChild(rightSubcardList);
@@ -104,6 +104,15 @@ export class Card {
                 const subcardItem = document.createElement('div');
                 subcardItem.innerHTML = `- ${this.subCards[i]}`;
                 subcardItem.className = 'card-subcard-item';
+                subcardItem.style.cursor = 'pointer';
+                subcardItem.addEventListener('click', (event) => {
+                    const item = refCombinedItems.find(item => item.uniqueID === this.subCards[i]);
+                    if(item === undefined) return;
+                    else if(!this.activeName) return;
+                    
+                    if(whichLeftPaneActive() === LeftPaneType.Desktop) addItemToDesktop(item);
+                    else addItemToStack(item);
+                });
                 return subcardItem;
             }
             
