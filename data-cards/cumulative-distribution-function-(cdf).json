@@ -1,0 +1,11 @@
+{
+    "name": "Cumulative Distribution Function (CDF)",
+    "uniqueID": "cumulative-distribution-function-(cdf)",
+    "description": "Let $X$ be a $\\mathbb{R}^d$ Random variable defined on $(\\Omega, \\mathbb{P})$. We define the following function as the CDF:\n\n$$F_x(t)=\\mathbb{P}(\\{\\omega\\in\\Omega: X(\\omega)\\leq t\\})$$\n\nNote that $F_x:\\mathbb{R}\\mapsto\\mathbb{R}$. All information about $X$'s distribution is contained in the CDF $F_X$ so we will often work with the CDF of a random variable. If $X$ is a continuous random variable, then its PDF $p_X(d)$ is also defined such that:\n$$p_X(t)=\\frac{d}{dt}F_X(t)$$\nNote that the CDF and PDF determine each other. We can get the PDF via $p_X(t)=\\frac{d}{dt}F_X(t)$, and we can get the CDF via $F_X(t)=\\int_{-\\infty}^t p_X(x)dx)$. Equivalently, all information about $X$'s distribution is contained in the PDF $p_X$ as well.\n<br><br>\nBasic properties of the CDF include:\n<br>&emsp;1. $F_x(t)$ is a non-decreasing function (if $t_1\\leq t_2$ then $F_x(t_1) \\leq F_x(t_2)$).\n<br>&emsp;2. $\\lim_{t\\rightarrow-\\infty}F_X(t)=0$ and $\\lim_{t\\rightarrow\\infty}F_X(t)=1$",
+
+    "creationDate": "2023-12-15T15:57:44.924Z",
+    "editDate": "2023-12-15T16:09:29.973Z",
+
+    "categories": [],
+    "subcards": []
+}

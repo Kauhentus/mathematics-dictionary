@@ -1,6 +1,6 @@
 {
     "name": "Probability theory",
     "uniqueID": "[g]probability-theory",
-    "description": "",
-    "childrenIDs": ["conditional-probability","marginal-pdf","[g]monte-carlo-methods","monte-carlo-markov-chain-(mcmc)","probability-density-function-(pdf)"]
+    "description": "Probably theory concerns the study of a sample space $\\Omega$ on which random variables $X$ are defined. These random variables describe events in the sample space which occur with a probability $\\mathbb{P}$. ",
+    "childrenIDs": ["[g]monte-carlo-methods","conditional-probability","marginal-pdf","monte-carlo-markov-chain-(mcmc)","probability-density-function-(pdf)"]
 }

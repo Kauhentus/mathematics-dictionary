@@ -1,0 +1,11 @@
+{
+    "name": "Sample Space",
+    "uniqueID": "sample-space",
+    "description": "The collection of possible outcomes of an experiment is called the <b>sample space</b> denoted by $\\Omega$. Any subset $A\\subseteq \\Omega$ is called an <b>event</b>. We define $\\emptyset$ to be the <b>impossible event</b> and $\\Omega$ itself to be the <b>inevitable event</b>.\n<br><br>\nA sample space can be continuous (i.e. $\\mathbb{R}$) or discrete (i.e. $\\mathbb{Z}$), and it can also be bounded (a closed set) or unbounded (an infinite set). This is the basis behind our theory of probability. ",
+
+    "creationDate": "2023-12-15T15:04:05.947Z",
+    "editDate": "2023-12-15T15:09:01.838Z",
+
+    "categories": [],
+    "subcards": []
+}

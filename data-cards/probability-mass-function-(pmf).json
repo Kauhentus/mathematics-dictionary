@@ -1,0 +1,11 @@
+{
+    "name": "Probability Mass Function (PMF)",
+    "uniqueID": "probability-mass-function-(pmf)",
+    "description": "Let $X$ be a <i>discrete</i> $\\mathbb{R^d}$ random variable defined on $(\\Omega, \\mathbb{P})$. Suppose the discrete random variable can take on values $\\{x_k\\}_{k=0}^K$ each with probabilities $\\{p_k\\}_{k=0}^K$. Recall that a discrete random variable has a CDF of the form:\n\n$$F_X(t)=\\sum_{k=0}^Kp_k\\cdot\\mathbb{1}(t\\geq x_k)$$\n\nNote that $\\sum_k p_k=1$ must be true. Then we say that the <b>probability mass function</b> is the ordered sequence $\\{p_k\\}_{k=0}^K$ which effectively describes the distribution of our discrete random variable. The following relation expresses this property more clearly:\n\n$$p_k=\\mathbb{P}(\\{\\omega\\in\\Omega : X(\\omega)=x_k\\})$$",
+
+    "creationDate": "2023-12-17T03:10:06.367Z",
+    "editDate": "2023-12-18T01:21:31.733Z",
+
+    "categories": [],
+    "subcards": []
+}

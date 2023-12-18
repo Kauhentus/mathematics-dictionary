@@ -78,7 +78,10 @@ const init = async () => {
     initPaneResizing();
     
     // @ts-ignore
-    if (window.MathJax) MathJax.typeset();
+    if (window.MathJax) {
+        // @ts-ignore
+        MathJax.typeset();
+    }
 }
 
 init();

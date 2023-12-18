@@ -7,6 +7,6 @@ export const toJSONSafeText = (text: string) => {
 
 export const fromJSONSafeText = (text: string) => {
     return text
-        .replace(/\\n/g, "\n")
+        .replace(/\\n(?![a-z])/g, "\n")
         .replace(/\\"n/g, "\"");
 }

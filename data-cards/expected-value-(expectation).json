@@ -1,0 +1,11 @@
+{
+    "name": "Expected Value (Expectation)",
+    "uniqueID": "expected-value-(expectation)",
+    "description": "Let $g: \\mathbb{R}\\mapsto\\mathbb{R}$ be a function. Now suppose that $X$ is a continuous random variable with PDF $p_X$. We define the following to be the expected value of $g$ with respect to the distribution of $X$:\n\n$$\\mathbb{E}\\left[g(X)\\right]=\\int_{-\\infty}^\\infty g(x)p_X(x)dx$$\n\nThe expected value of $g(X)$ only exists if the integral is absolutely convergent. That is, $\\int_{-\\infty}^\\infty |g(x)|p_X(x)dx<\\infty$ must be true. If not, then we say that $\\mathbb{E}[g(X)]$ does not exist. We have a similar definition for the expected value of discrete variables:\n\n$$\\mathbb{E}\\left[g(X)\\right]=\\sum_{k=0}^Kg(x_k)p_k$$\n\nThe sequence summation must absolutely converge as well for the expectation to be defined. The expectation operator is linear where for any random variables $X$ and $Y$ and a constant $a$, we have that:\n<br>&emsp;1. $\\mathbb{E}[X + Y] = \\mathbb{E}[X] + \\mathbb{E}[Y]$\n<br>&emsp;2. $\\mathbb{E}[aX] = a\\mathbb{E}[X]$",
+
+    "creationDate": "2023-12-18T01:22:07.836Z",
+    "editDate": "2023-12-18T01:29:24.355Z",
+
+    "categories": [],
+    "subcards": []
+}

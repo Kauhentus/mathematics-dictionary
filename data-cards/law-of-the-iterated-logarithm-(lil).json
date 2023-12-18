@@ -1,0 +1,11 @@
+{
+    "name": "Law of the Iterated Logarithm (LIL)",
+    "uniqueID": "law-of-the-iterated-logarithm-(lil)",
+    "description": "Let $X_1, X_2, \\ldots, X_n$ be random variables defined on $(\\Omega, \\mathbb{R})$. If the following three conditions hold:\n<br>\n<br>&emsp; 1. The random variables are iid. \n<br>&emsp; 2. $\\mathbb{E}[X_1]$ exists.\n<br>&emsp; 3. $\\text{Var}[X]$ exists (implied by 2.).\n<br><br>\nThen the error is approximately bounded as follows:\n$$e_n(\\omega)=\\left|\\frac{1}{n}\\sum_{i=1}^nX_i(\\omega)-\\mathbb{E}[X_1]\\right|\\leq\\sqrt{\\text{Var}[X]}\\sqrt{\\frac{2\\:\\text{ln}\\:\\text{ln}\\:n}{n}}$$\n\nA rigorous version of this approximation is as follows:\n\n$$\\mathbb{P}\\left(\\left\\{\\omega\\in\\Omega: \\limsup_{n\\rightarrow\\infty}\\left|\\frac{\\frac{1}{n}\\sum_{i=1}^nX_i(\\omega)-\\mathbb{E}[X_1]}{\\sqrt{\\text{Var}[X]}\\sqrt{\\frac{2\\:\\text{ln}\\:\\text{ln}\\:n}{n}}}\\right| \\right\\}\\right)=1$$\n",
+
+    "creationDate": "2023-12-18T01:43:47.286Z",
+    "editDate": "2023-12-18T01:51:11.028Z",
+
+    "categories": [],
+    "subcards": []
+}

@@ -1,0 +1,11 @@
+{
+    "name": "Empirical CDF",
+    "uniqueID": "empirical-cdf",
+    "description": "Suppose we have random variables $X_1, X_2, \\ldots, X_n$ which are iid and share the same CDF $F$ which is unknown. We can approximate $F$ with an empirical CDF given by:\n\n$$F_n(\\omega,t)=\\frac{1}{n}\\sum_{i=1}^n\\mathbb{1}\\left(t\\geq X_i(\\omega)\\right)$$\n\nFor each fixed $\\omega$, $F_n$ is a function of $t$ and fits our interpretation of a CDF. Furthermore, observe that $F_n$ is a step-like function per the summed indicator functions so it's only an approximation of whatever $F$ truly is. It follows that the error within our emperical CDF is $e=|F_n(\\omega, t)-F(t)|$.",
+
+    "creationDate": "2023-12-18T01:56:57.584Z",
+    "editDate": "2023-12-18T02:25:46.109Z",
+
+    "categories": [],
+    "subcards": []
+}

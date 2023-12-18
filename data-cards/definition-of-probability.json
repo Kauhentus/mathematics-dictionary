@@ -1,0 +1,11 @@
+{
+    "name": "Definition of Probability",
+    "uniqueID": "definition-of-probability",
+    "description": "Let $\\Omega$ be a sample space. Suppose $\\mathbb{P}$ is a real-valued function of all subsets of $\\Omega$. That is to say, $\\mathbb{P}:\\mathcal{P}(\\Omega)\\mapsto\\mathbb{R}$. $\\mathbb{P}$ is a <b>probability</b> if it satisfies three axioms:\n<br>&emsp;1. $\\mathbb{P}(A)\\geq 0$ for any $A\\subset\\Omega$\n<br>&emsp;2. $\\mathbb{P}(\\Omega)=1$\n<br>&emsp;3. For any infinitely long sequence of events $A_1, A_2,\\ldots,A_n,\\ldots$ such that any two are mutually exclusive (e.g. $A_i\\cap A_j=\\emptyset$ if $i=j$), then the following holds:\n\n$$\\mathbb{P}\\left(\\bigcup_{n=1}^\\infty A_n\\right)=\\sum_{n=1}^\\infty \\mathbb{P}(A_n)$$",
+
+    "creationDate": "2023-12-15T15:21:13.918Z",
+    "editDate": "2023-12-15T15:29:29.848Z",
+
+    "categories": [],
+    "subcards": []
+}

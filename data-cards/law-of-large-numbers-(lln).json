@@ -1,0 +1,11 @@
+{
+    "name": "Law of Large Numbers (LLN)",
+    "uniqueID": "law-of-large-numbers-(lln)",
+    "description": "Let $X_1, X_2, \\ldots, X_n$ be random variables defined on $(\\Omega, \\mathbb{P})$. If the following two conditions hold:\n<br>\n<br>&emsp;1. The random variables are independent and identically distributed.\n<br>&emsp;2. $\\mathbb{E}[X_1]$ exists.\n<br>\n<br>Then the following equation is always true. In words, the Law of Large Numbers tells us that the probability that the sample mean of our random variables is always equal to the expectation when $n$ is large.\n$$\\mathbb{P}\\left(\\left\\{\\omega\\in\\Omega:\\lim_{n\\rightarrow\\infty}\\left(\\frac{1}{n}\\sum_{i=0}^n X_i(\\omega)\\right)=\\mathbb{E}[X_1]\\right\\}\\right)=1$$ \n\nAlternatively, the Law of Large Numbers tells us that the event where the sample mean of our random variables is not equal to the expectation is extremely rare with probability $0$. Note that the event is <i>not impossible</i>, it just doesn't happen when $n$ is large. The alternative formulation:\n\n$$\\mathbb{P}\\left(\\left\\{\\omega\\in\\Omega:\\lim_{n\\rightarrow\\infty}\\left(\\frac{1}{n}\\sum_{i=0}^n X_i(\\omega)\\right)\\neq\\mathbb{E}[X_1]\\right\\}\\right)=0$$ \n\nSome remarks about the Law of Large Numbers:\n<br>&emsp;1. $\\bar{X}_n(\\omega)=\\frac{1}{n}\\sum_{i=0}^nX_i(\\omega)$ is a random variable.\n<br>&emsp;2. $\\lim_{n\\rightarrow\\infty}\\bar{X}_n(\\omega)$ is a random variable.\n<br>&emsp;3. $e_n(\\omega)=|\\bar{X}_n(\\omega) - \\mathbb{E}[X_1]|$ is a random variable. That is to say when $n < \\infty$, there will be some error between the sample mean and the expectation. Again, this error is a random variable.\n<br>&emsp;4. The Law of Large Numbers implies that error converges to zero. That is, $\\mathbb{P}(\\{\\omega\\in\\Omega: \\lim_{n\\rightarrow\\infty}e_n(\\omega)=0\\})=1$. The treatment of error as a random variable opens up the analysis of the expectation approximation's convergence rate.",
+
+    "creationDate": "2023-12-18T01:30:04.951Z",
+    "editDate": "2023-12-18T01:43:29.736Z",
+
+    "categories": [],
+    "subcards": []
+}

@@ -1,0 +1,11 @@
+{
+    "name": "d-Cross Polytope",
+    "uniqueID": "d-cross-polytope",
+    "description": "The d-Cross polytope is given as:\n\n$$C^*_d=\\left\\{x\\in\\mathbb{R}^d\\:\\:\\bigg|\\:\\sum_{i=1}^d |x_i|\\leq 1\\right\\}$$",
+
+    "creationDate": "2023-11-28T21:14:38.534Z",
+    "editDate": "2023-11-28T21:18:44.216Z",
+
+    "categories": ["polytope-theory"],
+    "subcards": []
+}

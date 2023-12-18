@@ -1,0 +1,11 @@
+{
+    "name": "Random Variable",
+    "uniqueID": "random-variable",
+    "description": "A random variable (RV) is a function $X$ that maps the sample space to the real numbers. That is to say, $X(\\omega): \\Omega \\mapsto \\mathbb{R}$.\n<br><br>\nWe have events $\\omega\\in\\Omega$ and random variables assign \"values\" to these events. Before performing the experiment, we clearly do not know the results of our experiment (which event $\\omega$ actually happens) so we don't know the value of $X(\\omega)$. This is what we call randomness. \n<br><br>\nAny function $X:\\Omega\\mapsto\\mathbb{R}^d$ is called a $\\mathbb{R}^d$-valued random variable. If there exists an $x\\in\\mathbb{R}^d$ such that $X(\\omega)=x$ for all $\\omega\\in\\Omega$, then $X$ is called deterministic (often used in a pseudo-random context). If $X$ is not deterministic, then it is called truly random.",
+
+    "creationDate": "2023-12-15T15:13:49.608Z",
+    "editDate": "2023-12-15T15:20:47.531Z",
+
+    "categories": [],
+    "subcards": []
+}

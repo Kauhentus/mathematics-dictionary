@@ -1,0 +1,11 @@
+{
+    "name": "Variance",
+    "uniqueID": "variance",
+    "description": "The variance of a random variable $X$ tells us how much the random variable $X$ \"varies\". We define it using expectation, and the variance of $X$ only exists if the expectation of $X$ exists. Variance is given as:\n\n$$\\text{Var}[X]=\\mathbb{E}[X^2] - \\mathbb{E}[X]^2$$\n\nSome basic properties of variance with a random variable $X$ and constant $a$:\n<br>&emsp;1. $\\text{Var}(X + a) = \\text{Var}(X)$\n<br>&emsp;2. $\\text{Var}(aX) = a^2\\text{Var}(X)$\n<br>&emsp;3. If random variables $X$ and $Y$ are uncorrelated, then we have $\\text{Var}[X + Y] = \\text{Var}[X] + \\text{Var}[Y]$.",
+
+    "creationDate": "2023-12-18T01:51:38.842Z",
+    "editDate": "2023-12-18T01:56:36.921Z",
+
+    "categories": [],
+    "subcards": []
+}

@@ -1,0 +1,11 @@
+{
+    "name": "Glivenko-Cantelli Theorem",
+    "uniqueID": "glivenko-cantelli-theorem",
+    "description": "Let $X_1, X_2, \\ldots, X_n$ be iid random variables defined on $(\\Omega, \\mathbb{P})$ that follow an unknown CDF $F$. The Glivenko-Cantelli tells us that the error within an empirical CDF $F_n(\\omega, t)$ goes to $0$ as our number of samples $n$ is large. Namely, it asserts:\n$$\\mathbb{P}\\left(\\left\\{ \\omega\\in\\Omega : \\lim_{n\\rightarrow\\infty} \\left(\\sup_t|Fn(\\omega,t)-F(t)|=0\\right)\\right\\}\\right)=1$$ ",
+
+    "creationDate": "2023-12-18T02:26:10.070Z",
+    "editDate": "2023-12-18T02:30:38.475Z",
+
+    "categories": [],
+    "subcards": []
+}

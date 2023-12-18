@@ -1,0 +1,11 @@
+{
+    "name": "Probability Space",
+    "uniqueID": "probability-space",
+    "description": "A probability space is a formal model that describes what an \"experiment\" with \"events\" is. In broad terms, it is the combination of a sample space $\\Omega$, a sigma algebra $\\sigma$, and a probability function $\\mathbb{P}$. We denote a probability space with the tuple $(\\Omega, \\sigma, \\mathbb{P})$ though we will often omit the sigma algebra for undergraduate probability theory. ",
+
+    "creationDate": "2023-12-15T15:52:56.980Z",
+    "editDate": "2023-12-15T15:55:42.658Z",
+
+    "categories": [],
+    "subcards": []
+}

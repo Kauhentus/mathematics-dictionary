@@ -1,0 +1,11 @@
+{
+    "name": "Indicator Function",
+    "uniqueID": "indicator-function",
+    "description": "Let $A\\subseteq\\mathbb{R}^d$. The indicator function is defined as:\n\n$$\\mathbb{1}_A(x)=\\begin{cases}1\\quad x\\in A\\\\0 \\quad x \\notin A\\end{cases}$$\n\n",
+
+    "creationDate": "2023-12-15T15:42:29.125Z",
+    "editDate": "2023-12-15T15:43:14.030Z",
+
+    "categories": [],
+    "subcards": []
+}
